@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Garden</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- link file javascript -->
+    <script src="script.js"></script>
+    <!-- create favicon -->
+    <link rel="icon" href="./image/favicon.png" type="image/x-icon">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="./image/logo pioneer 1.png" alt="logo pioneer">
+            <img src="./image/SMART GARDEN 1.png" alt="logo smart Garden">
+        </div>
+        <!-- <div class="button-sidebar">
+            <div class="button-sidebar-sub">
+                <a class="button-sidebar-sub-1" href="#"><img src="./image/icon_tempurature.png" alt="icon_tempurature"></a>
+            </div>
+            <div class="button-sidebar-sub">
+                <a class="button-sidebar-sub-2" href="#"><img src="./image/icon_humidity.png" alt="icon_humidity"></a>
+            </div>
+            <div class="button-sidebar-sub">
+                <a class="button-sidebar-sub-3" href="#"><img src="./image/Icon_brightness.png" alt="Icon_brightness"></a>
+            </div>
+        </div> -->
+        <div class="button-auto">
+            <p>AUTO</p>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+    </div>
+    <!-- end sidebar -->
+    <!-- main -->
+    <div class="main">
+        <div class="humidity">
+            <div id="SOIL_moisture" class="SOIL_moisture">
+                <p style="font-weight:bold; font-size:25px; color:#0084CE; margin-top:1%; text-align: center;">SOIL MOISTURE (%)</p>
+                <div id="cont" data-pct="100">
+                    <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                        <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                        </circle>
+                    </svg>
+                </div>
+                <label style="color:#0084ce; font-weight:bold;">
+                    AUTO VALUE: <span id="auto_value">0</span>
+                    <input type="range" max="100" min="0" step="1" value="" id="percent1" style="display: inline-block; width:50%; height: auto; margin-left: 0%;">
+                    <span id="auto_value">100</span>
+                </label>
+                <div class="button-input" style="width:100%;height:auto; display: inline-block;">
+                    <P style="display: block; float: left; margin-left:32%; font-weight: bold;font-size: 25px ;color: #0084CE; margin-top: 0px;">PUMP</P>
+                    <label class="switch" style="display:block; float:right; margin-right: 30%;">
+                            <input type="checkbox" checked placeholder="auto value">
+                            <span class="slider round slider1" style="background-color:;"></span>
+                        </label>
+                </div>
+            </div>
+
+            <div id="Air_humidity" class="Air_humidity">
+                <p style="font-weight:bold; font-size:25px; color:#0084CE; margin-top:1%; margin-right: 7%;">AIR HUMIDITY (%)</p>
+                <div id="cont" data-pct="100">
+                    <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                        <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                        </circle>
+                    </svg>
+                </div>
+                <label style="color:#0084ce; font-weight:bold;">
+                    AUTO VALUE: <span id="auto_value">0</span>
+                    <input type="range" max="100" min="0" step="1" value="" id="percent2"
+                        style="display: inline-block; width:50%; height: auto; margin-left: 0%;">
+                    <span id="auto_value">100</span>
+                </label>
+                <div class="button-input" style="width:100%;height:auto; display: inline-block;">
+                    <P style="display: block; float: left; margin-left:32%; font-weight: bold;font-size: 25px ;color: #0084CE; margin-top: 0px;">
+                        PUMP</P>
+                    <label class="switch" style="display:block; float:right; margin-right: 30%;">
+                        <input type="checkbox" checked placeholder="auto value">
+                        <span class="slider round slider1" style="background-color:;"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="tempurature" class="tempurature">
+            <p style="font-weight:bold; font-size:25px; color:#FF0000; margin-top:1%; margin-right: 7%;">TEMPURATURE (°C)</p>
+            <div id="cont" data-pct="100">
+                <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0" style="stroke:#ff0000 ;">
+                 </circle>
+            </svg>
+            </div>
+            <label style="color:#FF0000; font-weight:bold;">
+            AUTO VALUE: <span id="auto_value">0</span>
+            <input type="range" max="100" min="0" step="1" value="" id="percent3"
+                style="display: inline-block; width:50%; height: auto; margin-left: 0%;">
+            <span id="auto_value">100</span>
+        </label>
+            <div class="button-input" style="width:100%;height:auto; display: inline-block;">
+                <P style="display: block; float: left; margin-left:20%; font-weight: bold;font-size: 25px ;color: #FF0000; margin-top: 0px;">
+                    CONVERED</P>
+                <label class="switch" style="display:block; float:right; margin-right: 20%;">
+                <input type="checkbox" checked placeholder="auto value" style="" >
+                <span class="slider round slider2" style="background-color:;"></span>
+            </label>
+            </div>
+        </div>
+        <div id="light" class="light">
+            <p style="font-weight:bold; font-size:25px; color:#FFC90B; margin-top:1%; margin-right: 7%;">LIGHT (%)</p>
+            <div id="cont" data-pct="100" style="color: #FFC90B;">
+                <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"
+                    style="stroke:#FFC90B;">
+                </circle>
+            </svg>
+            </div>
+            <label style="color:#FFC90B; font-weight:bold;">
+            AUTO VALUE: <span id="auto_value">0</span>
+            <input type="range" max="100" min="0" step="1" value="" id="percent4"
+                style="display: inline-block; width:50%; height: auto; margin-left: 0%;">
+            <span id="auto_value">100</span>
+        </label>
+            <div class="button-input" style="width:100%;height:auto; display: inline-block;">
+                <P style="display: block; float: left; margin-left:20%; font-weight: bold;font-size: 25px ;color: #FFC90B; margin-top: 0px;">
+                    LIGHT BULB</P>
+                <label class="switch" style="display:block; float:right; margin-right: 20%;">
+                <input type="checkbox" checked placeholder="auto value" style="">
+                <span class="slider round slider3" style="background-color:;"></span>
+            </label>
+            </div>
+        </div>
+        
+    </div>
+    
+        <!-- end main -->
+        <script src="script.js"></script>
+</body>
+
+</html>
+
+<! -->

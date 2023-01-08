@@ -1,0 +1,242 @@
+body{
+}
+     
+        /* css of sidebar */
+        .sidebar {
+            height: auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(130, 216, 50, 0.616);
+            /* add box shadow */
+            box-shadow: 0 0 10px rgb(86, 145, 31);
+            overflow-x: hidden;
+            text-align: center;
+            padding-bottom: 2%;
+        }
+        
+        .button-auto p{
+            font-size: 40px;
+            color: rgb(126, 145, 31);
+            font-weight: bold;
+            margin-top: 0%; margin-bottom: 3%;
+        }
+        /* .logo-pioneer img{
+            max-width: 90%;
+            max-height: 90%;
+            
+        } */
+        /* end css of sidebar */
+       /* css main */
+       .main{
+
+            height: auto;
+            width: 100%;
+            margin-left: 0%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            text-align: center;
+       }
+       /* .humidity{
+           width: 100%;
+           height: auto;
+           overflow: hidden;
+           display: inline-block;
+           text-align: center;
+       } */
+       .SOIL_moisture{
+          width: 100%;
+           height:auto;
+           margin-left: 1%;
+           margin-top: 2%;
+           overflow: hidden;
+           display: inline-block;
+           text-align: center;
+           float: left;
+           background-color: #99dbff73;
+           
+            box-shadow: 0 0 10px 0 #99dbff;
+       }
+       .Air_humidity{
+          width: 100%;
+           height: auto;
+           margin-right: 0%;
+           margin-top: 5%;
+           overflow: hidden;
+           display: inline-block;
+           text-align: center;
+           float: right;
+           background-color: #99dbff73;
+          
+            box-shadow: 0 0 10px 0 #99dbff;
+       } 
+       .tempurature{
+           width: 100%;
+           height: auto;
+           margin-left: 1%;
+           margin-top: 5%;
+           overflow: hidden;
+           display: inline-block;
+           text-align: center;
+           background-color: #ffb0b073;
+           
+            box-shadow: 0 0 10px 0 #fdb0b0;
+       }
+       .light{
+           width: 100%;
+           height: auto;
+           margin-right: 0%;
+           margin-top: 5%;
+           overflow: hidden;
+           display: inline;
+           text-align: center;
+          vertical-align: top;
+          float: right;
+          background-color: #f1ff7673;
+          
+            box-shadow: 0 0 10px 0 #f1ff76;
+       }
+       /* end css main */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar .button-sidebar {
+                font-size: 18px;
+            }
+        }
+    /* switch box */
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 15%;
+  height: 25px;
+      
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  left:2px;
+  bottom: 0px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(108, 126, 22);
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(63, 60, 60);
+}
+input:checked + .slider1 {
+  background-color: #0084ce;
+}
+input:focus + .slider1 {
+  box-shadow: 0 0 1px rgb(63, 60, 60);
+}
+input:checked + .slider2 {
+  background-color: #ff0000;
+}
+input:focus + .slider2 {
+  box-shadow: 0 0 1px rgb(63, 60, 60);
+}
+input:checked + .slider3 {
+  background-color: #ffc90b;
+}
+input:focus + .slider3 {
+  box-shadow: 0 0 1px rgb(63, 60, 60);
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 45px;
+}
+
+.slider.round:before {
+  border-radius: 100%;
+}
+/* end switch box */
+/* chart */
+
+#svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke: #666;
+  stroke-width: 1.2em;
+}
+#svg #bar {
+  stroke: #0084CE;
+}
+#cont {
+  display: block;
+  height: 90px;
+  width: 90px;
+  margin-left: 25%;
+  border-radius: 100%;
+  position: relative;
+  margin-top: -1%;
+}
+#cont:after {
+  position: absolute;
+  display: block;
+  height: 90px;
+  width: 90px;
+  left: 90%;
+  top: 50%;
+  content: attr(data-pct)"";
+  margin-top: -30%;
+  margin-left: -30%;
+  border-radius: 100%;
+  line-height: 160px;
+  font-size: 2em;
+  text-shadow: 0 0 0.5em #0084CE;
+}
+
+input {
+  width: 15%;
+  color: rgb(129, 22, 22);
+  font-size: 1em;
+  border-radius: 0;
+  margin-top: 35%;
+}
+
+
+
+/* Make things perty */
+
+
+/* enc chart */
